@@ -8,7 +8,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-rmscene = ">=0.6.0, <0.7.0"
+rmscene = {git = "https://github.com/alexander-akhmetov/rmscene.git", rev = "new-colors"}
 click = "^8.0"
 
 [tool.poetry.dev-dependencies]
