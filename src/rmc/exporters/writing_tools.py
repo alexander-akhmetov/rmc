@@ -38,6 +38,8 @@ RM_PALETTE = {
 for color, pen in HARDCODED_COLORMAP.items():
     RM_PALETTE[pen] = color
 
+RM_PALETTE[PenColor.HIGHLIGHT] = RM_PALETTE[PenColor.HIGHLIGHT_GRAY]
+
 
 def clamp(value):
     """
