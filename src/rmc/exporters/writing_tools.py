@@ -235,7 +235,6 @@ class Highlighter(Pen):
 
 
 class Shader(Pen):
-
     def __init__(self, base_width, base_color_id):
         super().__init__("Shader", base_width, base_color_id)
         self.stroke_linecap = "round"
@@ -263,7 +262,7 @@ class Calligraphy(Pen):
         self.segment_length = 2
 
     def get_segment_width(self, speed, direction, width, pressure, last_width):
-        segment_width = 0.9 * (
+        segment_width = 0.5 * (
             ((1 + pressure / 255) * (width / 4))
             - 0.3 * self.direction_to_tilt(direction)
         ) + (0.1 * last_width)
