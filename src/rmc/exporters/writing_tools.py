@@ -138,7 +138,11 @@ class Ballpoint(Pen):
         self.segment_length = 5
 
     def get_segment_width(self, speed, direction, width, pressure, last_width):
-        segment_width = (0.5 + pressure / 255) + (width / 4) - 0.5 * ((speed / 4) / 50)
+        # Decrease base width from the default 0.5 in the upstream to a smaller value 0.3
+        # Reduce the impact of pressure by multiplying it with a smaller factor (0.7)
+        segment_width = (
+            (0.3 + 0.8 * pressure / 255) + (width / 6) - 0.5 * ((speed / 4) / 50)
+        )
         return segment_width
 
     def get_segment_color(self, speed, direction, width, pressure, last_width):
